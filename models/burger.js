@@ -6,12 +6,12 @@ class Burger {
     this.devoured = devoured;
   }
 
-  save() {
+  save(cb) {
     Orm.insertOne('burgers', this, result => {
       if (result) {
-        return result;
+        return cb(result);
       } else {
-        return false;
+        return cb(false);
       }
     });
   }
@@ -20,6 +20,12 @@ class Burger {
     Orm.selectAll('burgers', result => {
       return cb(result);
     });
+  }
+
+  static updateBurger(obj, cb) {
+    Orm.updateOne('burgers', obj, obj.id, result => {
+      return cb(result);
+    })
   }
 }
 

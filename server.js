@@ -14,7 +14,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.engine('handlebars', expressHbs({layoutsDir: 'views/layouts/', defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
-// app.set('views', 'views');
 
 app.use(express.static(path.join(__dirname, 'public')));
 

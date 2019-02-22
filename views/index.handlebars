@@ -1,12 +1,62 @@
 {{#if hasBurgers}}
-{{#each burgers}}
+<div class="col-12">
+    {{#each burgers}}
+    <ul class="list-group">
+        {{#if devoured}}
+        <li class="list-group-item devoured">{{burger_name}}
+        </li>
+        {{else}}
+        <li class="list-group-item devour">{{burger_name}} <button data-id="{{id}}"
+                class="devour-btn btn btn-success">Devour it!</button></li>
+        {{/if}}
+        {{/each}}
+
+        {{else}}
+        <li class="list-group-item">No Burgers Found</li>
+        {{/if}}
+    </ul>
+</div>
+
+
+
+
+{{!-- {{#if hasBurgers}}
+    {{#each burgers}}
     {{#if devoured}}
-    <p>{{burger_name}}</p>
-    <button>Devour</button>
+    <div class="devoured">
+        <p class="devoured-burg">{{burger_name}}</p>
+    </div>
     {{else}}
-    <p>{{burger_name}}</p>
+
+    <div class="un-devoured">
+        <p class="un-devoured-burg">{{burger_name}}</p>
+        <button data-id="{{id}}" class="devour-btn btn btn-success">Devour it!</button>
+    </div>
+
     {{/if}}
-{{/each}}
+    {{/each}}
+
+    {{else}}
+    <li class="list-group-item">No Burgers Found</li>
+    {{/if}} --}}
+
+
+{{!-- {{#if hasBurgers}}
+{{#each burgers}}
+{{#if devoured}}
+<div class="card devoured">
+    <div class="card-body">{{burger_name}}</div>
+</div>
 {{else}}
-<p>No Burgers Found</p>
+
+<div class="card un-devoured">
+    <div class="card-body">{{burger_name}}
+    <button data-id="{{id}}" class="devour-btn btn btn-success">Devour it!</button></div>
+</div>
+
 {{/if}}
+{{/each}}
+
+{{else}}
+<li class="list-group-item">No Burgers Found</li>
+{{/if}} --}}

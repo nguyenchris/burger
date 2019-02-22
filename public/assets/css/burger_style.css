@@ -1,0 +1,26 @@
+/* * {
+    width: 0;
+    box-sizing: border-box;
+} */
+
+.devoured {
+    background-color: black;
+    width: 50%;
+    height: 80px;
+    float: right;
+    /* position: absolute; */
+    /* right: 0; */
+}
+
+.un-devoured {
+    background-color: yellow;
+    width: 50%;
+    height: 80px;
+    /* float: left; */
+}
+/* 
+.list-group > .devoured
+
+.list-group-item > .devour-btn {
+    float: right;
+} */
