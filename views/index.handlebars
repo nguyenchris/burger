@@ -1,0 +1,12 @@
+{{#if hasBurgers}}
+{{#each burgers}}
+    {{#if devoured}}
+    <p>{{burger_name}}</p>
+    <button>Devour</button>
+    {{else}}
+    <p>{{burger_name}}</p>
+    {{/if}}
+{{/each}}
+{{else}}
+<p>No Burgers Found</p>
+{{/if}}
