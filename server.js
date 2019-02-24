@@ -4,7 +4,6 @@ const expressHbs = require('express-handlebars');
 
 const app = express();
 
-const db = require('./config/connection');
 const burgersRoutes = require('./controllers/burgers_controllers');
 
 
