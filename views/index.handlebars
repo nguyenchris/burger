@@ -1,4 +1,42 @@
 {{#if hasBurgers}}
+
+
+<div class="col-6 undevoured">
+    <h2 class="title">Available Burgers</h2>
+
+    <ul class="list-group">
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li class="list-group-item devour"><span>{{burger_name}}</span><input type='text' data-id={{id}} class='edit' style='display: none;' data-burger='{{burger_name}}'><button data-id="{{id}}" class="devour-btn btn btn-success">Devour it!</button>
+        </li>
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
+
+<div class="col-6 devoured">
+    <h2 class="title">Devoured Burgers</h2>
+    <ul class="list-group">
+        {{#each burgers}}
+        {{#if devoured}}
+        <li class="list-group-item devoured"><span>{{burger_name}}</span>
+            <input type='text' data-id={{id}} class='edit' style='display: none;' data-burger='{{burger_name}}'>
+        </li>
+        {{/if}}
+        {{/each}}
+    </ul>
+</div>
+
+
+
+
+{{else}}
+<h1>No Burgers Found</h1>
+{{/if}}
+
+
+{{!-- {{#if hasBurgers}}
+
 <div class="col-12">
     {{#each burgers}}
     <ul class="list-group">
@@ -15,7 +53,7 @@
         <li class="list-group-item">No Burgers Found</li>
         {{/if}}
     </ul>
-</div>
+</div> --}}
 
 
 
