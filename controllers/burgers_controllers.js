@@ -4,7 +4,6 @@ const Burger = require('../models/Burger');
 
 router.get('/', (req, res) => {
   Burger.getBurgers(burgers => {
-      console.log(burgers.devoured == false);
     res.render('index', {
         burgers: burgers,
         hasBurgers: burgers.length > 0
